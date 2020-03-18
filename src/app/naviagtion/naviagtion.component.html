@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-sm navbar-light " style="background-color:darkcyan">
+    <a class="navbar-brand text-white" href="#">Insuredmine</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+            <li class="nav-item active">
+                <a class="text-white active ml-3" routerLink="/home" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a *ngIf="!authService.loggedIn()" class="text-white active ml-3" routerLink="/register" routerLinkActive="active">Register</a>
+            </li>
+            <li class="nav-item active">
+                <a *ngIf="!authService.loggedIn()" class="text-white active ml-3" routerLink="/login" routerLinkActive="active">Login</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <!-- <li class="nav-item active">
+                <a class="text-white active ml-3" routerLink="/events" routerLinkActive="active">Events</a>
+            </li> -->
+
+            
+            <li class="nav-item active">
+                <a class="text-white active ml-3" routerLink="/special" routerLinkActive="active">Special</a>
+            </li>
+            <li class="nav-item active">
+                    <a class="text-white active ml-3" style="cursor: pointer" *ngIf="authService.loggedIn()" (click)="authService.logoutUser()" >Logout</a>
+                </li>
+
+        </ul>
+    </div>
+</nav>

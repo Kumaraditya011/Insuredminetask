@@ -1,0 +1,34 @@
+<app-naviagtion></app-naviagtion>
+
+
+    <h2>Game Table</h2>
+    <p>Type something in the input field to search the table for first names:</p>
+    <div class="col-lg-8">
+
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+    </div>
+    <br>
+    
+    <h1>{{welcome}}</h1>
+    <div class="col-lg-10">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Game</th>
+                    <th>Platform</th>
+                    <th>Release</th>
+                </tr>
+                <tbody id="myTable">
+
+                    <tr *ngFor="let game of games;let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{game.game}}</td>
+                        <td>{{game.platform}}</td>
+                        <td>{{game.release}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
